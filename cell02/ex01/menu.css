@@ -1,0 +1,28 @@
+body {
+    font-size: 40px;
+    text-align: center;
+    background: url(https://www.42madrid.com/wp-content/uploads/2021/05/MAPA-NETWORK.jpg) rgba(255, 255, 255, 0.7);
+    background-size: cover;
+    background-blend-mode: hue;
+}
+
+button {
+    font-size: 50px;
+    font-family: 'Trebuchet MS';
+    font-style: oblique;
+    color: dodgerblue;
+    background-color: bisque;
+    border-radius: 10%;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.data_dropdown {
+    display: none;
+}
+
+.dropdown:hover .data_dropdown {
+    display: block;
+}
