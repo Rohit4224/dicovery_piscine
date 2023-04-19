@@ -4,20 +4,17 @@ body, html {
 
 .parallax {
     background-image: url(https://images.adsttc.com/media/images/574e/3e72/e58e/ce87/b200/0074/large_jpg/INEDIT_42_1113_02.jpg?1464745565);
-    height: 100%; /* full height */
-    /* parallax effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* text */
-    position: relative;
-    text-align: center;
-    color: white;
 }
 
 .parallax01 {
     background-image: url(https://pbs.twimg.com/media/FAc2S_AXsAAz-fE.jpg:large);
+}
+
+.parallax02 {
+    background-image: url(https://content.fortune.com/wp-content/uploads/2019/03/ven04.-42-software-school.jpg);
+}
+
+.parallax, .parallax01, .parallax02 {
     height: 100%; /* full height */
     /* parallax effect */
     background-attachment: fixed;
@@ -26,38 +23,12 @@ body, html {
     background-size: cover;
     /* text */
     position: relative;
-    text-align: center;
+    /* text-align: center; */
     color: white;
+
 }
 
-.parallax02 {
-    background-image: url(https://content.fortune.com/wp-content/uploads/2019/03/ven04.-42-software-school.jpg);
-    height: 100%; /* full height */
-    /* parallax effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    text-align: center;
-    color: white;
-}
-
-.msg01 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.msg02 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.msg03 {
+.msg {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -67,21 +38,12 @@ body, html {
 .input {
     height: 1000px;
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.scroll01 {
-    text-align: center;
+.scroll {
     color: aliceblue;
-    font-size: 200px
-}
-
-.input01 {
-    height: 1000px;
-    background-color: black;
-}
-
-.scroll02 {
-    text-align: center;
-    color: aliceblue;
-    font-size: 200px
+    font-size: 100px;
 }

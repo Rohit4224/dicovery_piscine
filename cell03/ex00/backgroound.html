@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="backgroound.css">
+	<title>Change Background Color</title>
+</head>
+<body>
+	<h1>Change Background Color</h1>
+	<p>Click the button below to change the background color of the page:</p>
+	<button onclick="changeBackgroundColor()">Change Background Color</button>
+
+	<script>
+		function changeBackgroundColor() {
+			var randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+			document.body.style.backgroundColor = randomColor;
+		}
+	</script>
+</body>
+</html>
