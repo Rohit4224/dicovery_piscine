@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic Calculator</title>
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+		input[type="text"] {
+			padding: 5px;
+			margin-bottom: 10px;
+			width: 150px;
+			text-align: center;
+		}
+		select {
+			padding: 5px;
+			margin-bottom: 10px;
+			width: 80px;
+		}
+		input[type="submit"] {
+			padding: 5px 20px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		input[type="submit"]:hover {
+			background-color: #3e8e41;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<input type="text" id="left" placeholder="Left operand">
+		<select id="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input type="text" id="right" placeholder="Right operand">
+		<input type="submit" value="Try me!">
+	</form>
+
+	<script>
+        // Select the form and its input fields
+var form = document.querySelector('form');
+var leftOperand = document.querySelector('#left');
+var operator = document.querySelector('#operator');
+var rightOperand = document.querySelector('#right');
+
+// Add an event listener to the form submission
+form.addEventListener('submit', (event) => {
+	/* event.preventDefault(); // Prevent the default form submission */
+
+	// Check if the input fields contain valid positive integers
+	if (isNaN(leftOperand.value) || isNaN(rightOperand.value) || leftOperand.value < 0 || rightOperand.value < 0) {
+		alert('Error :(');
+		return;
+	}
+
+	// Calculate the result based on the selected operator
+	var result;
+	switch (operator.value) {
+		case '+':
+			result = Number(leftOperand.value) + Number(rightOperand.value);
+			break;
+		case '-':
+			result = leftOperand.value - rightOperand.value;
+			break;
+		case '*':
+			result = leftOperand.value * rightOperand.value;
+			break;
+		case '/':
+			if (rightOperand.value == 0) {
+				alert("It's over 9000!");
+				return;
+			}
+			result = leftOperand.value / rightOperand.value;
+			break;
+		case '%':
+			if (rightOperand.value == 0) {
+				alert("It's over 9000!");
+				return;
+			}
+			result = leftOperand.value % rightOperand.value;
+			break;
+		default:
+			alert('Invalid operator');
+			return;
+	}
+
+	// Display the result in an alert and console log
+	alert(`The result is ${result}`);
+	console.log(`The result is ${result}`);
+});
+
+// Set an interval to display an alert message every 30 seconds
+setInterval(() => {
+	alert('Please, use me...');
+}, 30000);
+
+    </script>
+</body>
+</html>
+
+

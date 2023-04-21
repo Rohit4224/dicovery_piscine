@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Balloon</title>
+	<style>
+		.balloon {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background-color: red;
+			transition: all 0.2s ease-in-out;
+			font-size: 20px;
+			font-weight: bold;
+			cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+		}
+
+		/* .balloon:hover {
+			transform: scale(0);
+		} */
+	</style>
+</head>
+<body>
+	<div class="balloon"></div>
+
+	<script>
+        /* initialising and declaration */
+		var balloon = document.querySelector(".balloon");
+		var size = 200;
+		var colorIndex = 0;
+		var colors = ["red", "green", "blue"];
+
+		balloon.addEventListener("click", function() {
+			if (size < 420) {
+				size += 10;
+				balloon.style.width = size + "px";
+				balloon.style.height = size + "px";
+			} else {
+				size = 200;
+				balloon.style.width = size + "px";
+				balloon.style.height = size + "px";
+			}
+
+			colorIndex = (colorIndex + 1) % colors.length;
+			balloon.style.backgroundColor = colors[colorIndex];
+		});
+
+		balloon.addEventListener("mouseleave", function() {
+			if (size > 200) {
+				size -= 5;
+				balloon.style.width = size + "px";
+				balloon.style.height = size + "px";
+			} else {
+				size = 200;
+				balloon.style.width = size + "px";
+				balloon.style.height = size + "px";
+			}
+			colorIndex = (colorIndex + colors.length - 1) % colors.length;
+			balloon.style.backgroundColor = colors[colorIndex];
+		});
+	</script>
+</body>
+</html>
+
+<!-- In this code, the balloon class is used to define the CSS properties of the balloon. The width and height are set to 200px to create a square shape, but the border-radius property is set to 50% to create a round shape. The background-color is set to red by default. The transition property is used to make the size change smoothly. The display: flex; align-items: center; justify-content: center; properties are used to center the content of the balloon vertically and horizontally. The font-size and font-weight properties are used to make the text inside the balloon more visible, and the cursor property is set to pointer to indicate that the balloon is clickable.
+
+The JavaScript code is used to add interactivity to the balloon. When the click event occurs on the balloon, the size variable is incremented by 10 pixels and the width and height properties of the balloon are updated to reflect the new size. If the size becomes greater than 420, the size variable is reset to 200 and the width and height properties are updated accordingly. The colorIndex variable is used to keep track of the current color of the balloon, and the backgroundColor property is updated with the next color in the colors array.
+
+When the mouseleave event occurs on the balloon, the `size -->
